@@ -2,7 +2,6 @@ platform: linux
 inputs:
   - name: eq-terraform-load-generator
 params:
-  GOOGLE_APPLICATION_CREDENTIALS: /root/gcloud-service-key.json
   PROJECT_ID:
 image_resource:
   type: registry-image
@@ -14,9 +13,5 @@ run:
   args:
     - -exc
     - |
-      cat >$GOOGLE_APPLICATION_CREDENTIALS <<EOL
-      ((gcp.service_account_json))
-      EOL
-
       cd eq-terraform-load-generator
       ./scripts/deploy_infrastructure.sh
