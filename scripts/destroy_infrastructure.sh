@@ -13,4 +13,4 @@ terraform state rm google_storage_bucket.benchmark-output-storage
 terraform destroy --auto-approve -var "project_id=${PROJECT_ID}"
 
 # Import bucket resource back into the state
-terraform import -var "project_id=${PROJECT_ID}" google_storage_bucket.benchmark-output-storage "${PROJECT_ID}"-outputs
+terraform import -var "project_id=${PROJECT_ID}" google_storage_bucket.benchmark-output-storage "${PROJECT_ID}/${PROJECT_ID}"-outputs
