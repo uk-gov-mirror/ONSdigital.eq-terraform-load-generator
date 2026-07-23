@@ -1,0 +1,7 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^https://confluence\\.ons\\.gov\\.uk" },
+    { "pattern": "^https://github\\.com/ONSdigital/eq-terraform-gcp" },
+    { "pattern": "^https://your-runner\\.gcp\\.dev\\.eq\\.ons\\.digital" }
+  ]
+}
