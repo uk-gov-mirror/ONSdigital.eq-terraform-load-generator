@@ -77,11 +77,11 @@ resource "google_container_cluster" "runner-benchmark" {
   #checkov:skip=CKV_GCP_21:Ensure Kubernetes Clusters are configured with Labels
   #chekov:skip=CKV_GCP_20:Ensure master authorized networks is set to enabled in GKE clusters
   #checkov:skip=CKV_GCP_65:Manage Kubernetes RBAC users with Google Groups for GKE
-  depends_on               = [google_project_service.container]
-  name                     = "runner-benchmark"
-  description              = "Kubernetes Cluster - Dev Benchmark environment"
-  location                 = var.region
-  min_master_version       = var.k8s_min_master_version
+  depends_on  = [google_project_service.container]
+  name        = "runner-benchmark"
+  description = "Kubernetes Cluster - Dev Benchmark environment"
+  location    = var.region
+  # min_master_version       = var.k8s_min_master_version
   initial_node_count       = 1
   remove_default_node_pool = true
   project                  = var.project_id
@@ -114,7 +114,7 @@ resource "google_container_node_pool" "main-node-pool" {
   cluster    = google_container_cluster.runner-benchmark.name
   node_count = 1
   project    = var.project_id
-  version    = var.k8s_min_master_version
+  # version    = var.k8s_min_master_version
 
   lifecycle {
     ignore_changes = [
