@@ -8,12 +8,6 @@ variable "project_id" {
   description = "The project id in GCP"
 }
 
-/* variable "k8s_min_master_version" {
-  type        = string
-  description = "The minimum version of the master"
-  default     = "1.33"
-} */
-
 variable "k8s_machine_type" {
   type        = string
   description = "The machine type to provision"
